@@ -12,7 +12,7 @@ class LinkedList{
 
 	// Adds a user to the list
 	public void add(User input){
-		if head==null{
+		if (head==null){
 			this.head=input;
 			this.tail=input;
 		}
@@ -26,7 +26,7 @@ class LinkedList{
 	// else, returns null
 	public User search(String username){
 		for(User temp=head; temp!=null; temp=temp.next){
-			if temp.getUsername().equals(username){
+			if (temp.getUsername().equals(username)){
 				return temp;
 			}
 		}
@@ -38,8 +38,8 @@ class LinkedList{
 		String out = "";
 		for(User temp=head; temp!=null; temp=temp.next){
 			out += "[";
-			out += temp.toString;
-			out += "]";
+			out += temp.toString();
+			out += "]\n";
 		}
 		return out;
 	}
