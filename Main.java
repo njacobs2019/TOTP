@@ -1,4 +1,8 @@
 // This class is only for testing purposes and was used to test the user object
+// test
+// new comment
+
+System.out.println("This is a test");
 
 import java.security.NoSuchAlgorithmException;
 
