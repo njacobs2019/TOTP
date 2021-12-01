@@ -9,6 +9,15 @@ class User{
 	private String key;
 	private int window=10;     // Time in seconds for the window
 
+	// Simple Constructor
+	// Helpful for testing and development
+	public User(String inUsername, String inKey){
+		this.username = inUsername;
+		this.key = inKey;
+	}
+
+	// Constructor that parses input
+	// Useful when reading from a file
 	public User(String input){
 		String[] output;
 		output = input.split(",");
@@ -16,12 +25,7 @@ class User{
 		this.key = output[1];
 	}
 
-	// Helpful for testing and development
-	public User(String inUsername, String inKey){
-		this.username = inUsername;
-		this.key = inKey;
-	}
-
+	// Returns the username
 	public String getUsername(){
 		return this.username;
 	}

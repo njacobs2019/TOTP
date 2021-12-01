@@ -1,3 +1,5 @@
+// This class is only for testing purposes and was used to test the user object
+
 import java.security.NoSuchAlgorithmException;
 
 class Main{
