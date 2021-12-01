@@ -56,9 +56,6 @@ class User{
 		out[0] = num1.mod(divisor).intValue();
 		out[1] = num2.mod(divisor).intValue();
 
-		System.out.println(out[0]);
-		System.out.println(out[1]);
-
 		return out;
 	}
 
