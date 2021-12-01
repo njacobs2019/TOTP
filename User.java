@@ -60,4 +60,8 @@ class User{
 
 		return out;
 	}
+
+	public String toString(){
+		return this.username;
+	}
 }
