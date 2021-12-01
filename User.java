@@ -8,6 +8,7 @@ class User{
 	private String username;
 	private String key;
 	private int window=10;     // Time in seconds for the window
+	public User next=null;
 
 	// Simple Constructor
 	// Helpful for testing and development
