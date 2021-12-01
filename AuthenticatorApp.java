@@ -5,24 +5,35 @@ class AuthenticatorApp(){
 
 private static myApp = new App("people.csv");
 
-public void UsernameInput(){
-	Scanner s = new Scanner(System.in);
-	// ask the user for their username
-	System.out.print("Username: ");
-	String nameInput = s.nextline();
-	System.out.print("\n");
-	// print off their codes for each App instance
-	returnCode = getCode(nameInput);
-	s.close();
-}
+	public void UsernameInput(){
+		Scanner s = new Scanner(System.in);
+		// ask the user for their username
+		System.out.print("Username: ");
+		String nameInput = s.nextline();
+		System.out.print("\n");
+		// print off their codes for each App instance
+		returnCode = getCode(nameInput);
+		s.close();
+		}
+
+	public void rerun(String again){
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Invalid Username. Type Y to try again or N to exit.");
+		rerun = scan.nextline();
+		if(rerun.equals("Y")){
+			UsernameInput();
+		}
+		if(rerun.equals("N")){
+			return;
+		}
+	}
 	public static void main(String[] args){
 		// have user input loop
-		Scanner scan = new Scanner(System.in);
 		String returnCode = null;
+		String retry = "Y";
 		UsernameInput();
-		While(returnCode = null){
-			
-			UsernameInput();
+		While(returnCode.equals(null) && retry.equals("Y")){
+			rerun();
 		}
 		//   Print off latest codes, else quit the program (Y/N)
 
