@@ -1,9 +1,9 @@
 //  This class simulates the Google Authenticator app that runs on someone's phone
-import java.uitl.Scanner;
+import java.util.Scanner;
 
-class AuthenticatorApp(){
+class AuthenticatorApp{
 
-private static myApp = new App("people.csv");
+private static App myApp = new App("people.csv");
 
 	public void UsernameInput(){
 		Scanner s = new Scanner(System.in);
@@ -16,9 +16,9 @@ private static myApp = new App("people.csv");
 		s.close();
 		}
 
-	public void rerun(String again){
+	public void rerun(){
 		Scanner scan = new Scanner(System.in);
-		System.out.print("Invalid Username. Type Y to try again or N to exit.");
+		System.out.print("Invalid Input. Type Y to try again or N to exit.");
 		rerun = scan.nextline();
 		if(rerun.equals("Y")){
 			UsernameInput();
@@ -26,13 +26,16 @@ private static myApp = new App("people.csv");
 		if(rerun.equals("N")){
 			return;
 		}
+		else{
+			rerun();
+		}
 	}
 	public static void main(String[] args){
 		// have user input loop
 		String returnCode = null;
 		String retry = "Y";
 		UsernameInput();
-		While(returnCode.equals(null) && retry.equals("Y")){
+		while(returnCode.equals(null) && retry.equals("Y")){
 			rerun();
 		}
 		//   Print off latest codes, else quit the program (Y/N)

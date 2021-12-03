@@ -2,11 +2,12 @@
 // test
 // new comment
 
-System.out.println("This is a test");
+
 
 import java.security.NoSuchAlgorithmException;
 
 class Main{
+	//System.out.println("This is a test");
 	public static void main(String[] args){
 		User nick = new User("Nicholas","winston");
 		//System.out.println(nick.getUsername());
