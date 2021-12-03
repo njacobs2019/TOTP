@@ -5,25 +5,25 @@ class AuthenticatorApp{
 
 private static App myApp = new App("people.csv");
 
-	public void UsernameInput(){
+	public static void UsernameInput(){
 		Scanner s = new Scanner(System.in);
 		// ask the user for their username
 		System.out.print("Username: ");
-		String nameInput = s.nextline();
+		String nameInput = s.nextLine();
 		System.out.print("\n");
 		// print off their codes for each App instance
-		returnCode = getCode(nameInput);
+		String returnCode = myApp.getCode(nameInput);
 		s.close();
 		}
 
-	public void rerun(){
+	public static void rerun(){
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Invalid Input. Type Y to try again or N to exit.");
-		rerun = scan.nextline();
-		if(rerun.equals("Y")){
+		String retry = scan.nextLine();
+		if(retry.equals("Y")){
 			UsernameInput();
 		}
-		if(rerun.equals("N")){
+		if(retry.equals("N")){
 			return;
 		}
 		else{
