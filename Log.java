@@ -1,10 +1,13 @@
 // This class creates a log of failed and passed password attempts
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 class Log{
 
 	// Initializes the object and stores the filename
 	public Log(String filename){
-		;
+		File ;
 	}
 
 
