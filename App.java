@@ -3,6 +3,7 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.security.NoSuchAlgorithmException;
 
 class App{
 	public LinkedList myData;
@@ -33,13 +34,29 @@ class App{
 	// Make sure to use exceptions, see the example in Main.java
 	// If user DNE return null
 	public String getCode(String username){
-		return "";
+		User temp = myData.search(username);
+
+		if (temp==null){
+			return null;
+		}
+
+		String out = "";
+		try{
+			out += temp.getOTP()[0];
+		}
+		catch (NoSuchAlgorithmException e){
+			System.out.println("Your machine does not support SHA-256.");
+		}
+		
+		return out;
 	}
 
 	//  Returns a boolean of whether or not the code is correct
 	//  Accepts either the current code or the previous code
 	// Make sure to use exceptions, see the example in Main.java
 	public boolean verifyCode(String username, String attemptCode){
+		
+
 		return false;
 	}
 }
