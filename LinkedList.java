@@ -25,7 +25,9 @@ class LinkedList{
 	// Returns a user object after searching by username
 	// else, returns null
 	public User search(String username){
+		
 		for(User temp=head; temp!=null; temp=temp.next){
+			System.out.println(temp.getUsername());
 			if (temp.getUsername().equals(username)){
 				return temp;
 			}
