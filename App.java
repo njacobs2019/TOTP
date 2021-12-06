@@ -47,7 +47,6 @@ class App{
 		catch (NoSuchAlgorithmException e){
 			System.out.println("Your machine does not support SHA-256.");
 		}
-		
 		return out;
 	}
 
@@ -55,8 +54,23 @@ class App{
 	//  Accepts either the current code or the previous code
 	// Make sure to use exceptions, see the example in Main.java
 	public boolean verifyCode(String username, String attemptCode){
-		
+		User temp = myData.search(username);
 
+		if (temp==null){
+			return false;
+		}
+
+		String out0 = "";
+		String out1 = "";
+		try{
+			out0 += temp.getOTP()[0];
+			out1 += temp.getOTP()[1];
+
+			return out0.equals(attemptCode) || out1.equals(attemptCode);
+		}
+		catch (NoSuchAlgorithmException e){
+			System.out.println("Your machine does not support SHA-256.");
+		}
 		return false;
 	}
 }
