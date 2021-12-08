@@ -17,6 +17,7 @@ private static App myApp = new App("people.csv");
 		//System.out.println(myApp.myData);
 		// print off their codes for each App instance
 		returnCode = myApp.getCode(nameInput);
+		System.out.println(returnCode);
 		while(returnCode == null && retry.equals("Y")){
 			System.out.print("invalid Input. Type Y to try again or N to exit. ");
 			retry = s.nextLine();
