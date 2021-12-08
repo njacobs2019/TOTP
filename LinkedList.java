@@ -27,8 +27,15 @@ class LinkedList{
 	public User search(String username){
 		username = username.replaceAll("\\P{Print}","");
 		for(User temp=head; temp!=null; temp=temp.next){
+<<<<<<< HEAD
 			//System.out.println(temp.getUsername());
 			if (temp.getUsername().replaceAll("\\P{Print}","").equals(username)){
+=======
+			System.out.println(temp.getUsername());
+
+			// might want to try username.equals(temp.getUsername());
+			if (temp.getUsername().equals(username)){
+>>>>>>> 0ec00c1eb383a30d8bbdae685ad09ff3d702a528
 				return temp;
 			}
 		}
