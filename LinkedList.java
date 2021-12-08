@@ -28,6 +28,8 @@ class LinkedList{
 		
 		for(User temp=head; temp!=null; temp=temp.next){
 			System.out.println(temp.getUsername());
+
+			// might want to try username.equals(temp.getUsername());
 			if (temp.getUsername().equals(username)){
 				return temp;
 			}
