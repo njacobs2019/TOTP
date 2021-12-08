@@ -5,41 +5,37 @@ class AuthenticatorApp{
 
 private static App myApp = new App("people.csv");
 
-	public static void UsernameInput(){
+	public static void main(String[] args){
+		// have user input loop
+		String returnCode = null;
+		String retry = "Y";
 		Scanner s = new Scanner(System.in);
 		// ask the user for their username
 		System.out.print("Username: ");
 		String nameInput = s.nextLine();
 		System.out.print("\n");
+		//System.out.println(myApp.myData);
 		// print off their codes for each App instance
-		String returnCode = myApp.getCode(nameInput);
-		s.close();
-		}
-
-	public static void rerun(){
-		Scanner scan = new Scanner(System.in);
-		System.out.print("Invalid Input. Type Y to try again or N to exit.");
-		String retry = scan.nextLine();
-		if(retry.equals("Y")){
-			UsernameInput();
-		}
-		if(retry.equals("N")){
-			return;
-		}
-		else{
-			rerun();
-		}
-	}
-	public static void main(String[] args){
-		// have user input loop
-		String returnCode = null;
-		String retry = "Y";
-		UsernameInput();
-		while(returnCode.equals(null) && retry.equals("Y")){
-			rerun();
+		returnCode = myApp.getCode(nameInput);
+		while(returnCode == null && retry.equals("Y")){
+			System.out.print("invalid Input. Type Y to try again or N to exit. ");
+			retry = s.nextLine();
+			System.out.print("\n");
+			if(retry.equals("Y")){
+				System.out.print("Username: ");
+				nameInput = s.nextLine();
+				System.out.print("\n");
+				returnCode = myApp.getCode(nameInput);
+				System.out.println(returnCode);
+			}
+			else if(retry.equals("N")){
+				return;
+			}
+			else{
+				returnCode = null;
+			}
 		}
 		//   Print off latest codes, else quit the program (Y/N)
-
 	}
 
 }
