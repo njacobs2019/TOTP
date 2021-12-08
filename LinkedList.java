@@ -30,7 +30,9 @@ class LinkedList{
 			System.out.println(temp.getUsername());
 
 			// might want to try username.equals(temp.getUsername());
+			// temp.getUsername().equals(username)
 			if (temp.getUsername().equals(username)){
+				System.out.println("The if statement in search fired");
 				return temp;
 			}
 		}
