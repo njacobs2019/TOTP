@@ -15,20 +15,24 @@ class Log{
 	// Adds a line to the log file recording that the
 	// user entered the code correctly or incorrectly
 	public void record(String username, String code, boolean correct){
+		//Creates new file
 		File new_f = new File(this.filename);
 		try{
+			//Creates file writer
+			//True as a parameter allows FileWriter to append to file
 			FileWriter w = new FileWriter(new_f, true);
 			String s = "";
-
+			//Records if user correctly entered their username and code
 			if(correct){
 				s = String.format("%s correctly entered %s\n",username, code);
 				w.write(s);
 			}
+			//Records to file login attempts where passcode was incorrect
 			else{
 				s = String.format("%s incorrectly entered %s\n",username, code);
 				w.write(s);
 			}
-			
+			//Closes writer
 			w.close();
 		}
 		catch(IOException e){
@@ -42,7 +46,7 @@ class Log{
 		try{
 			FileWriter w = new FileWriter(new_f);
 			String s = "";
-
+			//Records to file login attempts where username was incorrect
 			s = String.format("%s was entered, but this user does not exist\n",username);
 			w.write(s);
 			w.close();

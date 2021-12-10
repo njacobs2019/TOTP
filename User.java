@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 class User{
 	private String username;
 	private String key;
-	private int window=10;     // Time in seconds for the window
+	private int window=10;     // Time in seconds for the window where passcode is accepted
 	public User next=null;
 
 	// Simple Constructor
@@ -37,14 +37,15 @@ class User{
 	// https://www.geeksforgeeks.org/sha-256-hash-in-java/
 	public int[] getOTP() throws NoSuchAlgorithmException
 	{
+		//Sets time until new code is generated
 		long unixTime = Instant.now().getEpochSecond()/this.window;
-
+		//Initializes and sets hash vairables
 		String toHash1 = unixTime+this.key;
 		String toHash2 = (unixTime-1)+this.key;
 		
 		// Object to do the hashing
 		MessageDigest md = MessageDigest.getInstance("SHA-256");
-
+		
 		byte[] hash1 = md.digest(toHash1.getBytes(StandardCharsets.UTF_8));
 		byte[] hash2 = md.digest(toHash2.getBytes(StandardCharsets.UTF_8));
 
