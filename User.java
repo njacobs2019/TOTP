@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 class User{
 	private String username;
 	private String key;
-	private int window=10;     // Time in seconds for the window where passcode is accepted
+	private int window=30;     // Time in seconds for the window where passcode is accepted
 	public User next=null;
 
 	// Simple Constructor
@@ -45,7 +45,7 @@ class User{
 		
 		// Object to do the hashing
 		MessageDigest md = MessageDigest.getInstance("SHA-256");
-		
+
 		byte[] hash1 = md.digest(toHash1.getBytes(StandardCharsets.UTF_8));
 		byte[] hash2 = md.digest(toHash2.getBytes(StandardCharsets.UTF_8));
 
