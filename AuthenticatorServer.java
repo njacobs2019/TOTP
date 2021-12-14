@@ -1,3 +1,10 @@
+/*
+Nicholas Jacobs & Nate Roberts
+12/14/21
+Section 0001
+Final Project Site Side Main File
+*/
+
 //  This class simulates the Google Authenticator/2FA web interface
 import java.util.Scanner;
 

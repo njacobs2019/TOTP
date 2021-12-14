@@ -1,3 +1,10 @@
+/*
+Nicholas Jacobs & Nate Roberts
+12/14/21
+Section 0001
+Final Project Attempt Log Class
+*/
+
 // This class creates a log of failed and passed password attempts
 import java.io.File;
 import java.io.FileNotFoundException;

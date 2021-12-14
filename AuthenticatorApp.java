@@ -1,3 +1,10 @@
+/*
+Nicholas Jacobs & Nate Roberts
+12/14/21
+Section 0001
+Final Project Authenticator App Main File
+*/
+
 //  This class simulates the Google Authenticator app that runs on someone's phone
 import java.util.Scanner;
 

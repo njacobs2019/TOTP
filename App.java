@@ -1,4 +1,9 @@
-//  This class needs a better description
+/*
+Nicholas Jacobs & Nate Roberts
+12/14/21
+Section 0001
+Final Project App Side Constructor
+*/
 
 import java.util.Scanner;
 import java.io.File;

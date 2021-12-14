@@ -1,3 +1,10 @@
+/*
+Nicholas Jacobs & Nate Roberts
+12/14/21
+Section 0001
+Final Project User Info Constructor Class
+*/
+
 import java.time.Instant;
 import java.math.BigInteger; 
 import java.nio.charset.StandardCharsets;

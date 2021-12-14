@@ -1,3 +1,10 @@
+/*
+Nicholas Jacobs & Nate Roberts
+12/14/21
+Section 0001
+Final Project Linked List Class
+*/
+
 // This class manages the linked list of users
 
 class LinkedList{
