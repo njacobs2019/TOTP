@@ -25,6 +25,7 @@ class LinkedList{
 			this.head=input;
 			this.tail=input;
 		}
+
 		//Adds to list that already has data and sets tail to the new end of the list
 		else{
 			this.tail.next = input;
@@ -36,8 +37,8 @@ class LinkedList{
 	// else, returns null
 	public User search(String username){
 		//replaceAll removes all non printable characters
-		//This solves an issue we had where search could not find the first line of the linked list
 		username = username.replaceAll("\\P{Print}","");
+		
 		for(User temp=head; temp!=null; temp=temp.next){
 			//Returns the username if input username exists
 			//.equals makes the parameter a boolean and equals true if username exists
