@@ -10,8 +10,6 @@ import java.util.Scanner;
 
 class AuthenticatorServer{
 	public static void main(String[] args){
-		// **if the user types "quit" at any input quit the program**
-
 		// In a loop:
 		//		ask user for their username
 		//			if doesn't exist, tell them and ask for it again
@@ -33,6 +31,7 @@ class AuthenticatorServer{
 			user = s.nextLine();
 			System.out.print("Enter the code:  ");
 			code = s.nextLine();
+			
 			flag = myApp.verifyCode(user,code);
 			l.record(user,code,flag);
 			if(flag==false){
